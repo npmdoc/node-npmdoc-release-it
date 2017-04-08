@@ -1,0 +1,1314 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/webpro/release-it#readme">release-it (v2.7.1)</a>
+</h1>
+<h4>Interactive release tool for Git repositories. Increment version, commit, tag, push, build, publish to npm. Supports to build and release to a distribution/component repository.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.release-it">module release-it</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.cli">
+            function <span class="apidocSignatureSpan">release-it.</span>cli
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.execute">
+            function <span class="apidocSignatureSpan">release-it.</span>execute
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">release-it.</span>git</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">release-it.</span>shell</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">release-it.</span>tasks</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">release-it.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.release-it.git">module release-it.git</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.clone">
+            function <span class="apidocSignatureSpan">release-it.git.</span>clone
+            <span class="apidocSignatureSpan">(repo, dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.commit">
+            function <span class="apidocSignatureSpan">release-it.git.</span>commit
+            <span class="apidocSignatureSpan">(path, message, version)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.getChangelog">
+            function <span class="apidocSignatureSpan">release-it.git.</span>getChangelog
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.getGithubToken">
+            function <span class="apidocSignatureSpan">release-it.git.</span>getGithubToken
+            <span class="apidocSignatureSpan">(tokenRef)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.getLatestTag">
+            function <span class="apidocSignatureSpan">release-it.git.</span>getLatestTag
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.getRemoteUrl">
+            function <span class="apidocSignatureSpan">release-it.git.</span>getRemoteUrl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.hasChanges">
+            function <span class="apidocSignatureSpan">release-it.git.</span>hasChanges
+            <span class="apidocSignatureSpan">(repo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.isGitRepo">
+            function <span class="apidocSignatureSpan">release-it.git.</span>isGitRepo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.isWorkingDirClean">
+            function <span class="apidocSignatureSpan">release-it.git.</span>isWorkingDirClean
+            <span class="apidocSignatureSpan">(requireCleanWorkingDir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.push">
+            function <span class="apidocSignatureSpan">release-it.git.</span>push
+            <span class="apidocSignatureSpan">(remoteUrl, pushUrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.pushTags">
+            function <span class="apidocSignatureSpan">release-it.git.</span>pushTags
+            <span class="apidocSignatureSpan">(version, pushUrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.release">
+            function <span class="apidocSignatureSpan">release-it.git.</span>release
+            <span class="apidocSignatureSpan">(options, remoteUrl, tagName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.stage">
+            function <span class="apidocSignatureSpan">release-it.git.</span>stage
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.stageDir">
+            function <span class="apidocSignatureSpan">release-it.git.</span>stageDir
+            <span class="apidocSignatureSpan">(baseDir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.status">
+            function <span class="apidocSignatureSpan">release-it.git.</span>status
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.git.tag">
+            function <span class="apidocSignatureSpan">release-it.git.</span>tag
+            <span class="apidocSignatureSpan">(version, tag, annotation)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.release-it.shell">module release-it.shell</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.build">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>build
+            <span class="apidocSignatureSpan">(command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.bump">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>bump
+            <span class="apidocSignatureSpan">(file, version)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.copy">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>copy
+            <span class="apidocSignatureSpan">(files, options, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.mkCleanDir">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>mkCleanDir
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.npmPublish">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>npmPublish
+            <span class="apidocSignatureSpan">(path, tag)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.popd">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>popd
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.pushd">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>pushd
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.run">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>run
+            <span class="apidocSignatureSpan">(command, commandArgs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.shell.runTemplateCommand">
+            function <span class="apidocSignatureSpan">release-it.shell.</span>runTemplateCommand
+            <span class="apidocSignatureSpan">(command)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.release-it.tasks">module release-it.tasks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.tasks.run">
+            function <span class="apidocSignatureSpan">release-it.tasks.</span>run
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.release-it.util">module release-it.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.util.format">
+            function <span class="apidocSignatureSpan">release-it.util.</span>format
+            <span class="apidocSignatureSpan">(template, replacements)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.util.increment">
+            function <span class="apidocSignatureSpan">release-it.util.</span>increment
+            <span class="apidocSignatureSpan">(version, increment, identifier)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.util.isValidVersion">
+            function <span class="apidocSignatureSpan">release-it.util.</span>isValidVersion
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.util.template">
+            function <span class="apidocSignatureSpan">release-it.util.</span>template
+            <span class="apidocSignatureSpan">(input, context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.release-it" id="apidoc.module.release-it">module release-it</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.cli" id="apidoc.element.release-it.cli">
+        function <span class="apidocSignatureSpan">release-it.</span>cli
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fromCli(args) {
+  return execute(config.parseArgs(args));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.execute" id="apidoc.element.release-it.execute">
+        function <span class="apidocSignatureSpan">release-it.</span>execute
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function execute(opts) {
+
+  config.mergeOptions(opts);
+
+  if(config.isShowVersion) {
+
+    cli.version();
+
+  } else if(config.isShowHelp) {
+
+    cli.help();
+
+  } else {
+
+    if(config.isForce) {
+      log.warn('Using --force, I sure hope you know what you are doing.');
+    }
+
+    if(config.isDebug) {
+      require('when/monitor/console');
+    }
+
+    log.debugDir(config.options);
+
+    return tasks.run(config.options).catch(error =&gt; {
+
+      log.error(error);
+
+      if(config.isDebug) {
+        throw error;
+      }
+
+    });
+  }
+
+  return noop;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.release-it.git" id="apidoc.module.release-it.git">module release-it.git</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.clone" id="apidoc.element.release-it.git.clone">
+        function <span class="apidocSignatureSpan">release-it.git.</span>clone
+        <span class="apidocSignatureSpan">(repo, dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clone(repo, dir) {
+  const commitRef = repo.match(commitRefRe),
+    branch = commitRef &amp;&amp; commitRef[0] ? commitRef[0].replace(/^\#/, '') : 'master';
+  repo = repo.replace(commitRef, '');
+  return sequence([
+    run.bind(null, 'rm', '-rf', dir),
+    run.bind(null, 'git', 'clone', repo, '-b', branch, '--single-branch', dir)
+  ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.commit" id="apidoc.element.release-it.git.commit">
+        function <span class="apidocSignatureSpan">release-it.git.</span>commit
+        <span class="apidocSignatureSpan">(path, message, version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function commit(path, message, version) {
+  return run(
+    'git',
+    'commit',
+    config.isForce ? '--allow-empty' : '',
+    `--message="${util.format(message, version)}"`,
+    path
+  ).catch(err =&gt; {
+    log.debug(err);
+    log.warn('Nothing to commit. The latest commit will be tagged.');
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.getChangelog" id="apidoc.element.release-it.git.getChangelog">
+        function <span class="apidocSignatureSpan">release-it.git.</span>getChangelog
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getChangelog(options) {
+  function runChangelogCommand(command) {
+    return run(command).then(result =&gt; {
+      process.stdout.write('\n');
+      config.setRuntimeOption('changelog', result.output);
+      return options;
+    });
+  }
+
+  if(options.changelogCommand) {
+    if(options.changelogCommand.match(/\[REV_RANGE\]/)) {
+      const previousVersion = config.getRuntimeOption('previousVersion');
+      const previousTag = util.format(options.src.tagName, previousVersion);
+      return tagExists(previousTag).then(hasTag =&gt; {
+        const command = options.changelogCommand.replace(/\[REV_RANGE\]/, hasTag ? `${previousTag}...HEAD` : '');
+        return runChangelogCommand(command);
+      }).catch(err =&gt; {
+        log.warn('Probably the current version in package.json is not a known tag in the repository.');
+        throw new Error(`Could not create changelog from latest tag (${previousTag}) to HEAD.`);
+      });
+    } else {
+      return runChangelogCommand(options.changelogCommand);
+    }
+  } else {
+    return noop;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  throw new Error('Unable to get remote Git url.')
+});
+}
+
+function getChangelog() {
+const options = config.options;
+if(options.github.release) {
+  return git.<span class="apidocCodeKeywordSpan">getChangelog</span>(options);
+}
+}
+
+function checkGithubToken() {
+const options = config.options;
+if(options.github.release) {
+  const token = git.getGithubToken(options.github.tokenRef);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.getGithubToken" id="apidoc.element.release-it.git.getGithubToken">
+        function <span class="apidocSignatureSpan">release-it.git.</span>getGithubToken
+        <span class="apidocSignatureSpan">(tokenRef)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getGithubToken(tokenRef) {
+  const token = process.env[tokenRef];
+  config.setRuntimeOption('github_token', token);
+  return token;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return git.getChangelog(options);
+  }
+}
+
+function checkGithubToken() {
+  const options = config.options;
+  if(options.github.release) {
+    const token = git.<span class="apidocCodeKeywordSpan">getGithubToken</span>(options.github.tokenRef);
+    if(!token) {
+      throw new Error(`About to release to GitHub, but ${options.github.tokenRef} environment variable not set`);
+    }
+  }
+}
+
+function releaseSourceRepo() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.getLatestTag" id="apidoc.element.release-it.git.getLatestTag">
+        function <span class="apidocSignatureSpan">release-it.git.</span>getLatestTag
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLatestTag() {
+  return run('!git', 'describe --tags --abbrev=0').then(result =&gt; {
+    const latestTag = result &amp;&amp; result.output ? result.output.trim() : null;
+    return latestTag;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function parseVersion() {
+
+  const options = config.options;
+  const version = util.isValidVersion(options.increment) ? options.increment : options.npm.version;
+
+  if(!version) {
+
+return git.<span class="apidocCodeKeywordSpan">getLatestTag</span>().then(tag =&gt; {
+  if(tag) {
+    const nextVersion = util.increment(tag, options.increment, options.prereleaseId);
+    log.bold(util.format('Latest tag: %s. Next version: %s', tag, nextVersion));
+    config.setRuntimeOption('previousVersion', tag);
+    config.setRuntimeOption('version', nextVersion);
+  } else {
+    throw new Error('Error detecting current version from latest tag.');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.getRemoteUrl" id="apidoc.element.release-it.git.getRemoteUrl">
+        function <span class="apidocSignatureSpan">release-it.git.</span>getRemoteUrl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getRemoteUrl() {
+  return run('!git', 'config --get remote.origin.url').then(result =&gt; {
+    if(result &amp;&amp; result.output) {
+      return result.output.trim();
+    }
+    throw new Error('Could not get remote Git url.');
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  } else {
+    config.setRuntimeOption('previousVersion', version);
+    config.setRuntimeOption('version', util.increment(version, options.increment, options.prereleaseId));
+  }
+}
+
+function setRemoteGitUrl() {
+  return git.<span class="apidocCodeKeywordSpan">getRemoteUrl</span>().then(remoteUrl =&gt; {
+    config.setRuntimeOption('remoteUrl', remoteUrl);
+  }).catch(err =&gt; {
+    throw new Error('Unable to get remote Git url.')
+  });
+}
+
+function getChangelog() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.hasChanges" id="apidoc.element.release-it.git.hasChanges">
+        function <span class="apidocSignatureSpan">release-it.git.</span>hasChanges
+        <span class="apidocSignatureSpan">(repo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hasChanges(repo) {
+  // Inverted: reject if run promise is resolved (i.e. `git diff-index` returns exit code 0)
+  return when.promise(resolve =&gt; {
+    run('!git', 'diff-index --name-only HEAD --exit-code').then(() =&gt; {
+      if(!config.isDryRun) {
+        config.setRuntimeOption(`${repo}_has_changes`, false);
+        log.warn(`Nothing to commit in ${repo} repo. The latest commit will be tagged.`);
+      }
+      resolve();
+    }).catch(resolve);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.isGitRepo" id="apidoc.element.release-it.git.isGitRepo">
+        function <span class="apidocSignatureSpan">release-it.git.</span>isGitRepo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isGitRepo() {
+  return run('!git', 'rev-parse --git-dir');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.isWorkingDirClean" id="apidoc.element.release-it.git.isWorkingDirClean">
+        function <span class="apidocSignatureSpan">release-it.git.</span>isWorkingDirClean
+        <span class="apidocSignatureSpan">(requireCleanWorkingDir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isWorkingDirClean(requireCleanWorkingDir) {
+  return requireCleanWorkingDir ? run('!git', 'diff-index --name-only HEAD --exit-code').catch(() =&gt; {
+    throw new Error('Working dir must be clean.');
+  }) : noop;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.push" id="apidoc.element.release-it.git.push">
+        function <span class="apidocSignatureSpan">release-it.git.</span>push
+        <span class="apidocSignatureSpan">(remoteUrl, pushUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function push(remoteUrl, pushUrl) {
+  const repository = pushUrl || '';
+  return run('git', 'push', repository).catch(err =&gt; {
+    log.error('Please make sure an upstream remote repository is configured for the current branch. Example commands:\n' +
+      `git remote add origin ${remoteUrl}\n` +
+      'git push --set-upstream origin master');
+    throw new Error(err);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  repo.stageDir,
+  repo.hasChanges
+];
+
+if(options.dist.repo) {
+  // Before committing to src repo, do some potentially problematic dist repo tasks.
+  const distRepoTasks = getDistRepoTasks(options);
+  executeTasks.<span class="apidocCodeKeywordSpan">push</span>(distRepoTasks.clone);
+  executeTasks.push(distRepoTasks.copy);
+  executeTasks.push(distRepoTasks.pushd);
+  executeTasks.push(distRepoTasks.bump);
+  executeTasks.push(distRepoTasks.beforeStageCommand);
+  executeTasks.push(distRepoTasks.stageDir);
+  executeTasks.push(distRepoTasks.hasChanges);
+  executeTasks.push(distRepoTasks.popd);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.pushTags" id="apidoc.element.release-it.git.pushTags">
+        function <span class="apidocSignatureSpan">release-it.git.</span>pushTags
+        <span class="apidocSignatureSpan">(version, pushUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pushTags(version, pushUrl) {
+  const repository = pushUrl || '';
+  return run(
+    'git',
+    'push',
+    '--follow-tags',
+    config.isForce ? '--force' : '',
+    repository
+  ).catch(() =&gt; {
+    log.error(`Could not push tag(s). Does tag "${version}" already exist? Use --force to move a tag.`);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.release" id="apidoc.element.release-it.git.release">
+        function <span class="apidocSignatureSpan">release-it.git.</span>release
+        <span class="apidocSignatureSpan">(options, remoteUrl, tagName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function release(options, remoteUrl, tagName) {
+  const repo = repoPathParse(remoteUrl);
+  const version = config.getRuntimeOption('version');
+
+  log.execution('node-github releases#createRelease', repo.repository);
+
+  const githubClient = initGithubClient(repo),
+    attempts = 3;
+  var success = false;
+
+  if(!config.isDryRun) {
+    return when.iterate(
+      attempt =&gt; attempt + 1,
+      attempt =&gt; success || attempt === attempts,
+      attempt =&gt; when.promise(resolve =&gt; {
+        githubClient.repos.createRelease({
+          owner: repo.owner,
+          repo: repo.project,
+          tag_name: util.format(tagName, version),
+          name: util.format(options.github.releaseName, version),
+          body: config.getRuntimeOption('changelog'),
+          prerelease: options.github.preRelease
+        }, (err, response) =&gt; {
+          if(err) {
+            log[attempt + 1 &lt; attempts ? 'warn' : 'error'](`${err.defaultMessage} (Attempt ${attempt + 1} of ${attempts})`);
+            log[attempt + 1 &lt; attempts ? 'warn' : 'error'](err.message);
+          } else {
+            log.execution('node-github', response.meta.location, response.tag_name, response.name);
+            log.verbose(response.body);
+            success = true;
+          }
+          resolve();
+        });
+      }),
+      0
+    );
+  } else {
+    return noop;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.stage" id="apidoc.element.release-it.git.stage">
+        function <span class="apidocSignatureSpan">release-it.git.</span>stage
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stage(file) {
+  if(file) {
+    const files = typeof file === 'string' ? file : file.join(' ');
+    return run('git', 'add', files).catch(error =&gt; {
+      log.warn(`Could not stage ${file}`);
+    });
+  } else {
+    return noop;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.stageDir" id="apidoc.element.release-it.git.stageDir">
+        function <span class="apidocSignatureSpan">release-it.git.</span>stageDir
+        <span class="apidocSignatureSpan">(baseDir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stageDir(baseDir) {
+  baseDir = baseDir || '.';
+  return run('git', util.format('add %s --all', baseDir));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.status" id="apidoc.element.release-it.git.status">
+        function <span class="apidocSignatureSpan">release-it.git.</span>status
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function status() {
+  return run(
+    '!git',
+    'status --short --untracked-files=no'
+  ).then(result =&gt; {
+    // Output also when not verbose
+    !config.isVerbose &amp;&amp; log.log(result.output);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.git.tag" id="apidoc.element.release-it.git.tag">
+        function <span class="apidocSignatureSpan">release-it.git.</span>tag
+        <span class="apidocSignatureSpan">(version, tag, annotation)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tag(version, tag, annotation) {
+  return run(
+    'git',
+    'tag',
+    config.isForce ? '--force' : '',
+    '--annotate',
+    `--message="${util.format(annotation, version)}"`,
+    util.format(tag, version)
+  ).then(() =&gt; {
+    config.setRuntimeOption('tag_set', true);
+  }).catch(() =&gt; {
+    log.warn(`Could not tag. Does tag "${version}" already exist? Use --force to move a tag.`);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.release-it.shell" id="apidoc.module.release-it.shell">module release-it.shell</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.build" id="apidoc.element.release-it.shell.build">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>build
+        <span class="apidocSignatureSpan">(command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function build(command) {
+  return command ? runTemplateCommand(command) : noop.then(() =&gt; {
+    log.verbose('No build command was provided.');
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.bump" id="apidoc.element.release-it.shell.bump">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>bump
+        <span class="apidocSignatureSpan">(file, version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function bump(file, version) {
+  if(file) {
+    log.execution('bump', file, version);
+  }
+  if (!config.isDryRun &amp;&amp; file !== false) {
+    const files = typeof file === 'string' ? [file] : file;
+    return when.map(files, file =&gt; fn.call(fs.readFile, path.resolve(file)).then(data =&gt; {
+      const pkg = JSON.parse(data.toString());
+      pkg.version = version;
+      return pkg;
+    }, err =&gt; {
+      log.warn(`Could not read ${err.path || file}`);
+      log.debug(err);
+    }).then(data =&gt; {
+      if(data){
+        return fn.call(fs.writeFile, file, `${JSON.stringify(data, null, 2)}\n`);
+      }
+    }).catch(err =&gt; {
+      log.warn(`Could not bump version in ${file}`);
+      log.debug(err);
+    }));
+  } else {
+    return noop;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.copy" id="apidoc.element.release-it.shell.copy">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>copy
+        <span class="apidocSignatureSpan">(files, options, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function copy(files, options, target) {
+  log.execution('copy', files, options, target);
+  return !config.isDryRun ? globcp(files, options, target) : noop;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.mkCleanDir" id="apidoc.element.release-it.shell.mkCleanDir">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>mkCleanDir
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mkCleanDir(dir) {
+  return sequence([
+    run.bind(null, 'rm', '-rf', dir),
+    run.bind(null, 'mkdir', '-p', dir)
+  ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.npmPublish" id="apidoc.element.release-it.shell.npmPublish">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>npmPublish
+        <span class="apidocSignatureSpan">(path, tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function npmPublish(path, tag) {
+  const publishPath = path || '.';
+  return run('npm', 'publish', publishPath, '--tag', tag);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.popd" id="apidoc.element.release-it.shell.popd">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>popd
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function popd() {
+  return run('popd');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.pushd" id="apidoc.element.release-it.shell.pushd">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>pushd
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pushd(path) {
+  return run('pushd', path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.run" id="apidoc.element.release-it.shell.run">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>run
+        <span class="apidocSignatureSpan">(command, commandArgs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function run(command, commandArgs) {
+
+  const shellCommand = getShellCommand(command.replace(forcedCmdRe, '')),
+    cmd = [].slice.call(arguments).join(' '),
+    normalizedCmd = cmd.replace(forcedCmdRe, ''),
+    args = [].slice.call(arguments, 1),
+    silentState = shell.config.silent;
+
+  shell.config.silent = !config.isVerbose;
+
+  log.execution(normalizedCmd);
+
+  if (normalizedCmd === cmd &amp;&amp; config.isDryRun) {
+    return noop;
+  }
+
+  return when.promise((resolve, reject) =&gt; {
+
+    if(shellCommand === 'exec') {
+
+      shell.exec(normalizedCmd, (code, output) =&gt; {
+        if (code === 0) {
+          resolve({
+            code,
+            output
+          });
+        } else {
+          reject(output);
+        }
+      });
+
+    } else if(shellCommand) {
+
+      resolve(shell[shellCommand].apply(shell, args));
+
+    } else {
+
+      resolve(command.apply(null, args));
+
+    }
+
+    shell.config.silent = silentState;
+
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.shell.runTemplateCommand" id="apidoc.element.release-it.shell.runTemplateCommand">
+        function <span class="apidocSignatureSpan">release-it.shell.</span>runTemplateCommand
+        <span class="apidocSignatureSpan">(command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runTemplateCommand(command) {
+  return run(util.template(command, config.context));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.release-it.tasks" id="apidoc.module.release-it.tasks">module release-it.tasks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.tasks.run" id="apidoc.element.release-it.tasks.run">
+        function <span class="apidocSignatureSpan">release-it.tasks.</span>run
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (options) {
+  return sequence([
+    parseVersion,
+    setRemoteGitUrl,
+    getChangelog,
+    checkGithubToken,
+    releaseSourceRepo,
+    releaseDistRepo
+  ], options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.release-it.util" id="apidoc.module.release-it.util">module release-it.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.util.format" id="apidoc.element.release-it.util.format">
+        function <span class="apidocSignatureSpan">release-it.util.</span>format
+        <span class="apidocSignatureSpan">(template, replacements)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function format(template, replacements) {
+  if(template.indexOf('%') === -1) {
+    return template;
+  } else {
+    return util.format.apply(null, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+changelogCommand: 'githubReleaseBodyCommand'
+};
+
+function fixAndWarn(options, deprecatedOption, cat, opt) {
+const log = require('./log'); // TODO: Fix circular ref
+if(deprecatedOption in options) {
+  log.warn(util.<span class="apidocCodeKeywordSpan">format</span>(`Deprecation notice: the option %s will be removed soon. Please
+ use %s${opt ? '.' + opt : ''} instead.`, deprecatedOption, cat));
+  if(opt) {
+    options[cat][opt] = options[deprecatedOption];
+  } else {
+    options[cat] = options[deprecatedOption];
+  }
+  delete options[deprecatedOption];
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.util.increment" id="apidoc.element.release-it.util.increment">
+        function <span class="apidocSignatureSpan">release-it.util.</span>increment
+        <span class="apidocSignatureSpan">(version, increment, identifier)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function increment(version, increment, identifier) {
+  increment = increment || 'patch';
+  if (releaseTypes.indexOf(increment) === -1) {
+    return increment;
+  } else {
+    return semver.inc(version, increment, identifier);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  const options = config.options;
+  const version = util.isValidVersion(options.increment) ? options.increment : options.npm.version;
+
+  if(!version) {
+
+return git.getLatestTag().then(tag =&gt; {
+  if(tag) {
+    const nextVersion = util.<span class="apidocCodeKeywordSpan">increment</span>(tag, options.increment, options.prereleaseId);
+    log.bold(util.format('Latest tag: %s. Next version: %s', tag, nextVersion));
+    config.setRuntimeOption('previousVersion', tag);
+    config.setRuntimeOption('version', nextVersion);
+  } else {
+    throw new Error('Error detecting current version from latest tag.');
+  }
+}).catch(err =&gt; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.util.isValidVersion" id="apidoc.element.release-it.util.isValidVersion">
+        function <span class="apidocSignatureSpan">release-it.util.</span>isValidVersion
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isValidVersion(value) {
+  return semver.valid(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  config = require('./config'),
+  sequence = require('when/sequence'),
+  noop = when.resolve.bind(when, true);
+
+function parseVersion() {
+
+  const options = config.options;
+  const version = util.<span class="apidocCodeKeywordSpan">isValidVersion</span>(options.increment) ? options.increment : options
+.npm.version;
+
+  if(!version) {
+
+return git.getLatestTag().then(tag =&gt; {
+  if(tag) {
+    const nextVersion = util.increment(tag, options.increment, options.prereleaseId);
+    log.bold(util.format('Latest tag: %s. Next version: %s', tag, nextVersion));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.util.template" id="apidoc.element.release-it.util.template">
+        function <span class="apidocSignatureSpan">release-it.util.</span>template
+        <span class="apidocSignatureSpan">(input, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function template(input, context) {
+  return _.template(input)(context);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    shell.config.silent = silentState;
+
+  });
+
+}
+
+function runTemplateCommand(command) {
+  return run(util.<span class="apidocCodeKeywordSpan">template</span>(command, config.context));
+}
+
+function getShellCommand(command) {
+  return command &amp;&amp; command in shell &amp;&amp; typeof shell[command] === 'function' ? command : 'exec
+';
+}
+
+function pushd(path) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
