@@ -105,6 +105,28 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.release-it.cli">module release-it.cli</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.cli.help">
+            function <span class="apidocSignatureSpan">release-it.cli.</span>help
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.release-it.cli.version">
+            function <span class="apidocSignatureSpan">release-it.cli.</span>version
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.release-it.git">module release-it.git</a><ol>
 
         <li>
@@ -407,7 +429,23 @@
     <li>description and source-code<pre class="apidocCodePre">function fromCli(args) {
   return execute(config.parseArgs(args));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const release = require(&#x27;../lib/release&#x27;),
+args = [].slice.call(process.argv, 2),
+isDebug = args.indexOf(&#x27;--debug&#x27;) !== -1;
+
+var exitCode = 0;
+
+release.<span class="apidocCodeKeywordSpan">cli</span>(args).then(function() {
+process.exit(exitCode);
+}).catch(function(err) {
+exitCode = 1;
+if(!isDebug) {
+  console.error(err);
+} else {
+  throw new Error(err);
+...</pre></li>
     </ul>
 
 
@@ -466,6 +504,41 @@
 
 
 
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.release-it.cli" id="apidoc.module.release-it.cli">module release-it.cli</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.cli.help" id="apidoc.element.release-it.cli.help">
+        function <span class="apidocSignatureSpan">release-it.cli.</span>help
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function () {
+  log.log(helpText);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.release-it.cli.version" id="apidoc.element.release-it.cli.version">
+        function <span class="apidocSignatureSpan">release-it.cli.</span>version
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">version = function () {
+  log.log(`v${version}`);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 </div>
